@@ -1,0 +1,39 @@
+CMPT 383 (Fall 2010): Simple C# Program
+Naoya Makino:301117541
+nmakino@sfu.ca
+September 12th, 2010
+
+Usage: SimpleCSharp.exe <input file>
+
+Description
+
+Write a C# program that takes a file of text as input. The file will only contain alphabetic characters and whitespace. The program should print list of the distinct words in the file, together with a count of the number of times that word appeared. Each word should appear on a separate line, followed by its count, with the two separated by a tab. The words should be displayed in lower-case, regardless of their case in the original input file.
+
+For purposes of this assignment, a word is any sequence of contiguous alphabetic characters (a-zA-Z). Ignore case when matching words ("The" and "the" are considered the same word in the example below). Whitespace separates words but are otherwise ignored.
+
+The output list can be in any order.
+
+You must use a Common Language Runtime generic collection in your program.
+
+The purpose of this assignment is to go through whatever processes you need to set up a C# compiler and write a basic C# program, including basic use of the collection classes provided in the Common Language Runtime (CLR).
+
+Example input file
+
+This is a test of what the test program might produce
+The file will test the program
+Example output (one of several possible orders)
+
+The sequence ' \t ' indicates a tab character.
+
+this \t 1
+is \t 1
+a \t 1
+test \t 3
+of \t 1
+what \t 1
+the \t 3
+program \t 2
+might \t 1
+produce \t 1
+file \t 1
+will \t 1
