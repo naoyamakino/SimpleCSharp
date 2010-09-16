@@ -2,6 +2,7 @@
  * CMPT 383 (Fall 2010): Simple C# Program
  * Naoya Makino:301117541
  * http://www.cs.sfu.ca/CC/383/ted/383-10-3/SimpleCSharp.html
+ * September 16th, 2010
  */ 
 using System;
 using System.IO;
@@ -10,25 +11,25 @@ class SimpleCSharp
 {
 	public static Void Main()
 	{
-		//get the command line parameter
-		String[] cmd = Environment.GetCommandLineArgs();
-		
-		if (cmd.Length < 2)//if no parameter is given
-		{
-			Console.WriteLine("Usage: " + cmd[0] + " <input file>" );
-			return;
-		}
 		string line;
 		string[] words;
 		List<string> list = new List<string>();
+		List<string> output = new List<string>();
 		try
 		{
-			using (StreamReader s = File.OpenText(cmd[1]))//open the file
+			using (StreamReader s = File.OpenText("simple.txt"))//open the file
 			{
+				/*
+				 * Reference: http://www.codeguru.com/csharp/csharp/cs_syntax/anandctutorials/article.php/c5861
+				 * 			  http://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx
+				 */ 
 				while ((line = s.ReadLine()) != null)//read each line
 				{
+					/*
+					 * Reference: http://dotnetperls.com/string-split
+					 */ 
 					words = line.Split(' ');//split the line by a word
-					foreach(string word in words)
+					foreach(string word in words) //reference: http://dotnetperls.com/list
 						list.Add(word);
 				}
 				for(int i = 0; i< list.Count; i++)
@@ -38,14 +39,11 @@ class SimpleCSharp
 						//count the number of occurrences for each word in the list
 						if (list[i].Equals(list[j], StringComparison.OrdinalIgnoreCase))
 						 	  count++;
-					for(int j = 0;j<i;j++)
+					if(!output.Contains(list[i].ToLower()))
 					{
-						int k = 0;
-						if (list[i].Equals(list[j], StringComparison.OrdinalIgnoreCase) == false)//if list[i] is unique from the previous words 
-							k++;
-						if(k == j)
-							Console.WriteLine(list[i] + "\t" + count);//print it with the number of occurrences
-					}	
+						Console.WriteLine(list[i] + "\t" + count);//print it with the number of occurrences
+						output.Add(list[i].ToLower());
+					}
 				}
 				
 			}

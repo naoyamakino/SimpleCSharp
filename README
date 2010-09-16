@@ -7,7 +7,8 @@ Usage: SimpleCSharp.exe <input file>
 
 Description
 
-Write a C# program that takes a file of text as input. The file will only contain alphabetic characters and whitespace. The program should print list of the distinct words in the file, together with a count of the number of times that word appeared. Each word should appear on a separate line, followed by its count, with the two separated by a tab. The words should be displayed in lower-case, regardless of their case in the original input file.
+Write a C# program that takes a file of text (named "simple.txt") as input. The file will only contain alphabetic characters and whitespace. The program should print a list of the distinct words in the file, together with a count of the number of times that word appeared. Each word should appear on a separate line, followed by its count, with the two separated by a tab. The words should be displayed in lower-case, regardless of their case in the original input file. The output should be sent to the console.
+
 
 For purposes of this assignment, a word is any sequence of contiguous alphabetic characters (a-zA-Z). Ignore case when matching words ("The" and "the" are considered the same word in the example below). Whitespace separates words but are otherwise ignored.
 
